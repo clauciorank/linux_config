@@ -17,14 +17,15 @@ memory {
 }
 
 battery 0 {
-        format = "  %percentage %remaining "
-	integer_battery_capacity = true
+        format = "🔋 %percentage %remaining"
+        path = "/sys/class/power_supply/BAT0/uevent"
+        low_threshold = 10
 }
 
 volume master{
         format = "♪: %volume"
         format_muted = "♪: muted (%volume)"
-        device = "pulse:1"
+        device = "default"
 }
 
 
