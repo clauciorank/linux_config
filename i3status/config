@@ -1,0 +1,38 @@
+general {
+    output_format = "i3bar"
+    colors = true
+    interval = 5
+}
+
+order += "disk /"
+order += "memory"
+#order += "cpu_temperature 0"
+#order += "load"
+order += "time"
+order += "battery 0"
+order += "volume master"
+
+memory {
+        format = "RAM %used of %available "
+}
+
+battery 0 {
+        format = "  %percentage %remaining "
+	integer_battery_capacity = true
+}
+
+volume master{
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "pulse:1"
+}
+
+
+disk "/" {
+    format = "%avail"
+}
+
+time {
+    format = "%d-%b-%Y %H:%M"
+}
+
